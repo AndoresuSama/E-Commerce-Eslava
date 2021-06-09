@@ -13,7 +13,7 @@
   }
 }
 
-.App-header {
+.App-body {
   background-color: black;
   min-height: 100vh;
   display: flex;
@@ -35,4 +35,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+ul{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
 }
