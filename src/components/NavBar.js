@@ -1,15 +1,17 @@
 import React from 'react'
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
 
     return(
-        <div>
-            <nav>
-                <h1>TheAndoSama Shop</h1>
+        <div id='nav-container'>
+            <nav id='nav-fix'>
                 <ul>
-                    <li>Inicio</li>
-                    <li>Tienda</li>
-                    <li>Donaciones</li>
+                <li><h1>TheAndoSama Shop</h1></li>
+                <li>Inicio</li>
+                <li>Tienda</li>
+                <li>Donaciones</li>
+                <CartWidget/>
                 </ul>
             </nav>
         </div>
