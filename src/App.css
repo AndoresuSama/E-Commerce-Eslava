@@ -36,3 +36,33 @@ ul{
   align-items: center;
   padding-top: 100px;
 }
+
+.item-count-container{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  border-color: rgb(100, 98, 98);
+  border-style: groove;
+  border-radius: 20%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: rgb(240, 240, 240);
+}
+
+.itemcount-button-order{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  height: 30px;
+  width: 100px;
+}
+
+.qty-value{
+  padding-left: 20px;
+  padding-right: 20px;
+}

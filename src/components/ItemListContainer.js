@@ -1,13 +1,18 @@
-import React from 'react'
+import React from 'react';
+import ItemCount from './ItemCount';
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ saludo, mensaje }) => {
+  return (
+    <div id='greeting-container'>
+      <h2>{saludo}</h2>
+      <h3>{mensaje}</h3>
+      <ItemCount
+        stock={5}
+        initial={0}
+        onAdd={(x) => alert('Se ha añadido ' + x + ' al carrito')}
+      />
+    </div>
+  );
+};
 
-    return(
-        <div id='greeting-container'>
-            <h2>Bienvenido a TheAndoSama Shop</h2>
-            <h3>En este momento no contamos con productos para mostrar, vuelve pronto...</h3>
-        </div>
-    )
-}
-
-export default ItemListContainer
+export default ItemListContainer;
