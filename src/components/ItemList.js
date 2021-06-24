@@ -45,7 +45,14 @@ async function GetItems () {
 GetItems();
 
 const ItemList = () => {
-  return <Item />;
+  return (
+    <Item
+      id='001'
+      title='Taza'
+      price='USD$50'
+      pictureUrl='../Assets/RedCart.svg'
+    />
+  );
 };
 
 export default ItemList;

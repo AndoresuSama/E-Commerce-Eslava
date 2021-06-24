@@ -16,7 +16,6 @@ const Item = ({ id, title, price, pictureUrl }) => {
         initial={0}
         onAdd={(x) => alert('Se ha añadido ' + x + ' al carrito')}
       />
-      <ItemCount />
     </div>
   );
 };
