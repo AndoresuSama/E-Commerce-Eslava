@@ -29,13 +29,25 @@ const ItemsArray = [
 ];
 
 const Item = () => {
-  return (
-    <ItemCount
-      stock={5}
-      initial={0}
-      onAdd={(x) => alert('Se ha añadido ' + x + ' al carrito')}
-    />
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(ItemsArray.map());
+    }, 2000);
+    reject(Error);
+  }
   );
 };
+
+Item.then(() => {
+  return (
+    <div>
+      <ItemCount
+        stock={5}
+        initial={0}
+        onAdd={(x) => alert('Se ha añadido ' + x + ' al carrito')}
+      />
+    </div>
+  );
+});
 
 export default Item;
