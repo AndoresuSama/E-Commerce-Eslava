@@ -6,8 +6,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   function moreItems () {
     if (stock > 1 && items < stock) {
       setItems(items + 1);
-    } else {
-      alert('No tenemos más stock de este producto.');
     }
   }
 
@@ -22,7 +20,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       <div className='itemcount-button-order'>
         <button onClick={lessItems}>-</button>
         <p className='qty-value'>{items}</p>
-        <button onClick={moreItems}>+</button>
+        <button onClick={moreItems} disabled={items === stock}>+</button>
       </div>
       <button onClick={onAdd} disabled={items === 0}>Agregar al carrito</button>
     </div>

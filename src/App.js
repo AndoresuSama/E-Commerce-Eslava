@@ -12,7 +12,7 @@ function App () {
       <body className='App-body'>
         <ItemListContainer
           saludo='Bienvenido a TheAndoSama Shop'
-          mensaje='En este momento no contamos con productos para mostrar, vuelve pronto...'
+          mensaje='La tienda oficial de TheAndoSama'
         />
       </body>
     </div>
