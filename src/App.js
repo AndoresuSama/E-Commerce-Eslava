@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import './App.css';
 
 function App () {
@@ -14,6 +15,7 @@ function App () {
           saludo='Bienvenido a TheAndoSama Shop'
           mensaje='La tienda oficial de TheAndoSama'
         />
+        <ItemDetailContainer />
       </body>
     </div>
   );

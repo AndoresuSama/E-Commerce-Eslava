@@ -82,5 +82,26 @@ ul{
   padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 15px;
-  border-radius: 7%;
+  border-radius: 9%;
 }
+
+#item-detail-container{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+#item-detail{
+  border: black;
+  border-style: groove;
+  width: 75%;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#id-positioning{
+  display: flex;
+  justify-content: flex-end;
+}
+
