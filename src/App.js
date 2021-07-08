@@ -3,13 +3,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 /* -- Componentes -- */
 import NavBar from './Components/NavBar';
-import ItemDetailContainer from './Components/ItemDetailContainer';
 
 /* -- Paginas -- */
 import Home from './Pages/Home';
 import Store from './Pages/Store';
 import Donations from './Pages/Donations';
 import Cart from './Pages/Cart';
+import ItemRouter from './Pages/ItemRouter';
 
 /* -- Estilos -- */
 import './App.css';
@@ -29,14 +29,14 @@ function App () {
             <Route path='/store'>
               <Store />
             </Route>
-            <Route exact path='/donations'>
+            <Route path='/donations'>
               <Donations />
             </Route>
-            <Route exact path='/cart'>
+            <Route path='/cart'>
               <Cart />
             </Route>
-            <Route exact path='/Details'>
-              <ItemDetailContainer />
+            <Route path='/item/:id'>
+              <ItemRouter />
             </Route>
           </Switch>
         </body>
