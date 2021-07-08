@@ -2,9 +2,14 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 /* -- Componentes -- */
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import NavBar from './Components/NavBar';
+import ItemDetailContainer from './Components/ItemDetailContainer';
+
+/* -- Paginas -- */
+import Home from './Pages/Home';
+import Store from './Pages/Store';
+import Donations from './Pages/Donations';
+import Cart from './Pages/Cart';
 
 /* -- Estilos -- */
 import './App.css';
@@ -19,10 +24,16 @@ function App () {
         <body className='App-body'>
           <Switch>
             <Route exact path='/'>
-              <ItemListContainer
-                saludo='Bienvenido a TheAndoSama Shop'
-                mensaje='La tienda oficial de TheAndoSama'
-              />
+              <Home />
+            </Route>
+            <Route path='/store'>
+              <Store />
+            </Route>
+            <Route exact path='/donations'>
+              <Donations />
+            </Route>
+            <Route exact path='/cart'>
+              <Cart />
             </Route>
             <Route exact path='/Details'>
               <ItemDetailContainer />
