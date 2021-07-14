@@ -35,7 +35,7 @@ function App () {
             <Route path='/cart'>
               <Cart />
             </Route>
-            <Route path='/item/:id'>
+            <Route path='/item/:ItemID'>
               <ItemRouter />
             </Route>
           </Switch>
