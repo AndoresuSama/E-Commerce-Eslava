@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemCount from '../Components/ItemCount';
+import ItemDetailContainer from '../Components/ItemDetailContainer';
 
 const ItemsArray = [
   {
@@ -39,40 +39,27 @@ const ItemRouter = () => {
 
   const GetItems = () => {
     return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(ItemsArray), 2000);
+      setTimeout(() => resolve(ItemsArray));
     });
   };
 
   useEffect(() => {
     GetItems().then((response) => { setProduct(response); });
+    GetItems().then((response) => { console.log(response.forEach(element => element.id)); });
   });
 
   return (
     <div>
       {product.map((products, i) => (
-        <div key='{i}'>
-          <div id='item-detail'>
-            <div id='img-description'>
-              <img
-                src={products.pictureURL}
-                alt={'imagen de ' + products.title}
-              />
-            </div>
-            <div id='description-content'>
-              <div id='id-positioning'>
-                <p>{products.id}</p>
-              </div>
-              <h1>{products.title}</h1>
-              <h2>{'US$' + products.price}</h2>
-              <p>{products.description}</p>
-              <ItemCount
-                stock={products.stock}
-                initial={0}
-                onAdd={(x) => alert('Se ha añadido ' + x + ' al carrito')}
-              />
-            </div>
-          </div>
-        </div>
+        <ItemDetailContainer
+          key={i}
+          id={products.id}
+          title={products.title}
+          price={products.price}
+          pictureURL={products.pictureURL}
+          stock={products.stock}
+          description={products.description}
+        />
       ))}
     </div>
   );
