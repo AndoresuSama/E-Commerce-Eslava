@@ -44,23 +44,20 @@ const ItemRouter = () => {
   };
 
   useEffect(() => {
-    GetItems().then((response) => { setProduct(response); });
-    GetItems().then((response) => { console.log(response.forEach(element => element.id)); });
+    GetItems().then((response) => { setProduct(response.find(response => response.id === ItemID)); });
+    console.log(product);
   });
 
   return (
     <div>
-      {product.map((products, i) => (
-        <ItemDetailContainer
-          key={i}
-          id={products.id}
-          title={products.title}
-          price={products.price}
-          pictureURL={products.pictureURL}
-          stock={products.stock}
-          description={products.description}
-        />
-      ))}
+      <ItemDetailContainer
+        id={product.id}
+        title={product.title}
+        price={product.price}
+        pictureURL={product.pictureURL}
+        stock={product.stock}
+        description={product.description}
+      />
     </div>
   );
 };
