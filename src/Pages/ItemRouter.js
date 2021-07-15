@@ -45,7 +45,6 @@ const ItemRouter = () => {
 
   useEffect(() => {
     GetItems().then((response) => { setProduct(response.find(response => response.id === ItemID)); });
-    console.log(product);
   });
 
   return (

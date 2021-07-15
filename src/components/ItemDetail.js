@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({ id, title, price, pictureURL, stock, description }) => {
+  const [addQty, setAddQty] = useState();
+
+  useEffect(() => {
+    console.log(addQty);
+  });
   return (
     <div id='item-detail'>
       <div id='img-description'>
@@ -20,7 +25,7 @@ const ItemDetail = ({ id, title, price, pictureURL, stock, description }) => {
         <ItemCount
           stock={stock}
           initial={0}
-          onAdd={(x) => alert('Se ha añadido ' + x + ' al carrito')}
+          onAdd={(x) => setAddQty(x)}
         />
       </div>
     </div>

@@ -15,6 +15,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
   }
 
+  const throwItems = () => {
+    return toString(items);
+  };
+
   return (
     <div className='item-count-container'>
       <div className='itemcount-button-order'>
@@ -22,7 +26,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <p className='qty-value'>{items}</p>
         <button onClick={moreItems} disabled={items === stock}>+</button>
       </div>
-      <button onClick={onAdd} disabled={items === 0}>Agregar al carrito</button>
+      <button onClick={throwItems()} disabled={items === 0}>Agregar al carrito</button>
     </div>
   );
 };
