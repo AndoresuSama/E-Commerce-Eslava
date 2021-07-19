@@ -88,12 +88,14 @@ ul{
 #item-detail-container{
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-top: 50px;
+  border-radius: 20%;
 }
 
 #item-detail{
   border: black;
   border-style: groove;
+  border-radius: 2.50%;
   width: 75%;
   padding-bottom: 15px;
   display: flex;

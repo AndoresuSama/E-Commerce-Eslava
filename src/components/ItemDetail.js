@@ -7,6 +7,7 @@ const ItemDetail = ({ id, title, price, pictureURL, stock, description }) => {
   useEffect(() => {
     console.log(addQty);
   });
+
   return (
     <div id='item-detail'>
       <div id='img-description'>
@@ -25,7 +26,7 @@ const ItemDetail = ({ id, title, price, pictureURL, stock, description }) => {
         <ItemCount
           stock={stock}
           initial={0}
-          onAdd={(x) => setAddQty(x)}
+          onAdd={(initial) => setAddQty(initial)}
         />
       </div>
     </div>
