@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({ id, title, price, pictureURL, stock, description }) => {
   const [addQty, setAddQty] = useState();
 
-  useEffect(() => {
-    console.log(addQty);
-  });
+  const onAdd = (x) => {
+    setAddQty(x);
+  };
 
   return (
     <div id='item-detail'>
@@ -23,11 +24,15 @@ const ItemDetail = ({ id, title, price, pictureURL, stock, description }) => {
         <h1>{title}</h1>
         <h2>{'US$' + price}</h2>
         <p>{description}</p>
-        <ItemCount
-          stock={stock}
-          initial={0}
-          onAdd={(initial) => setAddQty(initial)}
-        />
+        {addQty > 0
+          ? <Link to='/cart'>
+            <div className='item-count-container'>
+              <div className='itemcount-button-order'>
+                <button id='purchase-confirmation'>Terminar mi compra</button>
+              </div>
+            </div>
+            </Link>
+          : <ItemCount stock={stock} onAdd={onAdd} />}
       </div>
     </div>
   );

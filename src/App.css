@@ -111,3 +111,16 @@ a{
   color: red;
 }
 
+
+#Cart, #Donations{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+#purchase-confirmation{
+  border-radius: 5%;
+}

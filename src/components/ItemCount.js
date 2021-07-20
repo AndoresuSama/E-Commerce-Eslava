@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial = 0, onAdd }) => {
   const [items, setItems] = useState(initial);
 
   function moreItems () {
@@ -15,10 +15,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
   }
 
-  const throwItems = () => {
-    return toString(items);
-  };
-
   return (
     <div className='item-count-container'>
       <div className='itemcount-button-order'>
@@ -26,7 +22,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <p className='qty-value'>{items}</p>
         <button onClick={moreItems} disabled={items === stock}>+</button>
       </div>
-      <button onClick={throwItems()} disabled={items === 0}>Agregar al carrito</button>
+      <button onClick={() => onAdd(items)} disabled={items === 0}>Agregar al carrito</button>
     </div>
   );
 };
